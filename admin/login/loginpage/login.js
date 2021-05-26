@@ -12,12 +12,12 @@ $(document).ready(function() {
             url: 'loginpage/login.php',
             type: "POST",
             data: data,
-        }).done(function(e) {
-            var resp = JSON.parse(e);
+        }).done(function(res) {
+            var resp = JSON.parse(res);
             if (resp.status) // if login successful redirect user to secure.php page.
             {	
 //				playSound('startup');
-              	localStorage.setItem('_$dipss_sess_keeper__', JSON.stringify(resp.session));
+              	//slocalStorage.setItem('_$dipss_sess_keeper__', JSON.stringify(resp.session));
 				location.href = resp.redirect; // // redirect user to secure.php location/page.
 //				console.log(resp.session);
             } else {
