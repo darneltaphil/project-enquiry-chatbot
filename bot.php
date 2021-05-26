@@ -33,8 +33,8 @@
         
         </div>
         <button type="button" class="btn btn-danger cancel">Close</button>
-        <button type="button" class="btn btn-primary open">open</button>
-        </div>
+<!--        <button type="button" class="btn btn-primary open">open</button>-->
+</div>
 
 
     <script>
@@ -43,11 +43,12 @@
 			
 	document.getElementById("wrapper").style.display = "block";
 	$(".cancel").on("click", function(){
-		document.getElementById("wrapper").style.display = "none";
+		window.close()
+		//document.getElementById("wrapper").style.display = "none";
 	})
-	$(".open").on("click", function(){
-		document.getElementById("wrapper").style.display = "block";
-	})
+//	$(".open").on("click", function(){
+//		document.getElementById("wrapper").style.display = "block";
+//	})
 			
 	//check if there is an existing user
 	localStorage.removeItem('db')
@@ -81,61 +82,61 @@
 
 		let res , 
 		db =JSON.parse(localStorage.getItem('db'));
-		//console.log(db)
+		console.log(db)
 
-		$("#send-btn").on("click", function(){
-		let value = $("#data").val();
-		var msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ value +'</p></div></div>';
-		$(".form").append(msg);
-		$("#data").val('');
-				$.ajax({
-				url:'admin/cases/process.php',
-				method:'POST',
-				data:{user:user, },
-				success:function(){}
-				}).done(function(data){	});
+			$("#send-btn").on("click", function(){
+			let value = $("#data").val();
+			var msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ value +'</p></div></div>';
+			$(".form").append(msg);
+			$("#data").val('');
+					$.ajax({
+					url:'admin/cases/process.php',
+					method:'POST',
+					data:{user:user, },
+					success:function(){}
+					}).done(function(data){	});
 
-		$.each(db, function(i, val) {
-			if(!value.toLowerCase().includes(i)){
-				res=1;
-			} 
-		});
-
-
-		$.each(db, function(i, val) {
-
-		if(value.toLowerCase().includes(i)){
-		 var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+val+'</p></div></div>';
-			$(".form").append(replay);
-			// when chat goes down the scroll bar automatically comes to the bottom
-			$(".form").scrollTop($(".form")[0].scrollHeight);
-		res=0;
-	}
-
-		});
+			$.each(db, function(i, val) {
+				if(!value.toLowerCase().includes(i)){
+					res=1;
+				} 
+			});
 
 
-		if(res){
-				var reply_array=[
-							"I am not sure I understand you", 
-							 "Do you want to speak to a representative?", 
-							 "I am sorry, I don't understand your question", 
-							 "What do you want to do?", 
-							 "I want to answer, but i don't know what to say",
-							];
-			var index=Math.floor(Math.random() * 5)
+			$.each(db, function(i, val) {
 
-			var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+reply_array[index]+'</p></div></div>';
-			$(".form").append(replay);
-			// when chat goes down the scroll bar automatically comes to the bottom
-			$(".form").scrollTop($(".form")[0].scrollHeight);				
-			res =0
+			if(value.toLowerCase().includes(i)){
+			 var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+val+'</p></div></div>';
+				$(".form").append(replay);
+				// when chat goes down the scroll bar automatically comes to the bottom
+				$(".form").scrollTop($(".form")[0].scrollHeight);
+			res=0;
 		}
 
+			});
+
+
+			if(res){
+					var reply_array=[
+								"I am not sure I understand you", 
+								 "Do you want to speak to a representative?", 
+								 "I am sorry, I don't understand your question", 
+								 "What do you want to do?", 
+								 "I want to answer, but i don't know what to say",
+								];
+				var index=Math.floor(Math.random() * 5)
+
+				var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+reply_array[index]+'</p></div></div>';
+				$(".form").append(replay);
+				// when chat goes down the scroll bar automatically comes to the bottom
+				$(".form").scrollTop($(".form")[0].scrollHeight);				
+				res =0
+			}
+
+			});
+
+
 	});
-
-
-				});
 
 	
 			
