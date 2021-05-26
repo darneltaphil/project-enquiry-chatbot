@@ -3,9 +3,8 @@
 <file name="cases.js" server="ftp.dipssrms.com" local="132481823268208540" remote="132481608000000000" Dst="0" />
 <file name="caselist_all.php" server="ftp.sochibga.com" local="132647668370315997" remote="132647452200000000" Dst="0" />
 <file name="cases.js" server="ftp.sochibga.com" local="132659845031312632" remote="132659629200000000" Dst="0" />
-<file name="download.php" server="ftp.sochibga.com" local="132659715429588526" remote="132659499600000000" Dst="0" />
-<file name="barcode.php" server="ftp.sochibga.com" local="132331804400000000" remote="132659501400000000" Dst="0" />
 <file name="casedelete.php" server="ftp.sochibga.com" local="132331804440000000" remote="132659501400000000" Dst="0" />
 <file name="index.php" server="ftp.sochibga.com" local="132331804640000000" remote="132659501400000000" Dst="0" />
 <file name="waves.png" server="ftp.sochibga.com" local="132331804660000000" remote="132659501400000000" Dst="0" />
+<file name="caselist_all.php" server="ftp.lotustechcloud.com" local="132665375904861541" remote="132665376000000000" Dst="0" />
 </dwsync>

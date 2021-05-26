@@ -33,7 +33,7 @@ $_exe=mysqli_query($dbc,$_sql);
 	echo  "	<tr style='background:".$bg."'>";
 //	echo "<td class='p-1'>".$_row['job_accession']."</td>";	
 	echo "<td class='p-1'style='white-space: nowrap;'>".$_row['botuser_name']." </td>";	
-	echo "<td>".$_row['botuser_questions']."</td>";	
+	echo "<td align='center'>".$_row['botuser_questions']."</td>";	
 	echo "<td>".$_row['botuser_date']."</td>";	
 	echo "<td>".$_row['botuser_location']." </td>";	
 	echo "<td>".$_row['botuser_os']."</td>";	
