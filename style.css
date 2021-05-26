@@ -75,7 +75,7 @@ html,body{
 .wrapper .form .inbox .msg-header{
     max-width: 73%;
     margin-left: 10px;
-    hyphens: none;
+    hyphens: auto;
 }
 .form .inbox .msg-header p{
     color: #fff;
