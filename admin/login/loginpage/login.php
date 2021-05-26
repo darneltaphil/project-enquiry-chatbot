@@ -37,7 +37,7 @@ if(count($row)>0) {
           $_SESSION['USERMAIL'] =  convert_string('encrypt',$row[0]['user_email']);
 		  $_SESSION['ROLE'] =  convert_string('encrypt',	$row[0]['user_role']);
 			$resp['status']      = true;    
-			$resp['redirect']    = "../../dashboard.php";
+			$resp['redirect']    = "../dashboard.php";
 			echo json_encode($resp);
 
        } else {
