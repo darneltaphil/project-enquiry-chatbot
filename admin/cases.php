@@ -44,14 +44,6 @@ include "inc/header.php";
 							</span>
 							<span class="text  ">All enquiries </span>
 						</a>
-<!--
-						<a href="#" id="completed_case" class="btn btn-light btn-icon-split  my-1 shadow"  >
-							<span class="icon text-white-50">
-							<i class="fas fa-check-double fa-1x"></i>
-							</span>
-							<span class="text  ">Questions </span>
-						</a>
--->
 						<a href="#" id="closed_case" class="btn btn-light btn-icon-split  my-1 shadow"  > 
 							<span class="icon text-white-50">
 							<i class="fas fa-expand fa-1x"></i>
@@ -66,31 +58,6 @@ include "inc/header.php";
 
           </div>
 
-          <!-- Content Row -->
-<!--
-          <div class="row">    
-            <div class="col-lg-12 mb-0">
-
-              <div class="card shadow mb-4">
-                <div class="card-body">
-
-				<div class="row ">
-					<div class="col-lg-2">Filter Table</div>
-					<div class="col-lg-3 p-1 ">	
-						<div class="btn btn-dark today" id="today">Today</div> ||||
-						<div class="btn btn-dark month" id="month">Month</div> ||||
-					</div>
-					<div class="col-lg-2 p-1"><input type="text" class="form-control " id="from" name="" ></div>
-					<div class="col-lg-2 p-1"><input type="text" class="form-control " id="to" name="" ></div>
-					<div class="col-lg-2 p-1 ">
-						<div class="btn btn-dark range" id="range"><span class="fas fa-play fa-2x"></span></div>||||
-						<div class="btn btn-danger today fas fa-window-close fa-2x" id=""></div>
-					</div>
-                </div>
-              </div>
-				</div></div>
-		</div>
--->
           <div class="row">
 
             <!-- Content Column -->
