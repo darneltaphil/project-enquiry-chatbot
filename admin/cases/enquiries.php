@@ -1,4 +1,4 @@
-<?php require ('../auth.php');
+<?php require_once("../db/access.php");
 $user="user".$_REQUEST['user'];
 require_once('detectOS.php');
 	//GET IP ADDRESS

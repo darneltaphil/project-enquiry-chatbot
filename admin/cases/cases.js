@@ -67,19 +67,7 @@ $(document).ready(function(){
 		$('#caselist').html(data);
 	});
 	}
-//
-//$(document).on('click', ".today",function(){
-//	var e=$(this).attr('id');
-//  	load_caselist(e);
-//});
-//$(document).on('click', ".month",function(){
-//	var e=$(this).attr('id');
-//  	load_caselist(e);
-//});
-//$(document).on('click', ".range",function(){
-//	var e=$(this).attr('id');
-//  	load_caselist(e);
-//});
+
 
 // MENU BUTTONS COLOURS
 $("#individual_case").click(function(){

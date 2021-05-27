@@ -1,4 +1,4 @@
-<?php require ('../auth.php');
+<?php require_once("../db/access.php");
 	$user="user".$_REQUEST['user'];
 	$req=mysqli_query($dbc,"SELECT max(botuser_id) as id FROM enquiries WHERE enquiries.botuser_name='".$user."'");
 	$id=mysqli_fetch_assoc($req);
