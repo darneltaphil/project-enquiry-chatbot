@@ -56,7 +56,7 @@
 
 	//saving the session for the current user
 	$.ajax({
-		url:'admin/cases/enquiries.php?'+Date.now(),
+		url:'admin/cases/enquiries.php?t='+Date.now(),
 		method:'POST',
 		data:{user:user },
 		success:function(){
@@ -65,7 +65,7 @@
 
 	//fetch Q&A
 	$.ajax({
-		url:'admin/cases/load_db.php?'+Date.now(),
+		url:'admin/cases/load_db.php?t='+Date.now(),
 		method:'POST',
 		success:function(){
 			//console.log('it is going on')
