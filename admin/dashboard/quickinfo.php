@@ -1,6 +1,6 @@
 <?php 
 $enquiries=mysqli_fetch_array(mysqli_query($dbc,"SELECT COUNT(botuser_id) as enquiries FROM enquiries"));
-$users=mysqli_fetch_array(mysqli_query($dbc,"SELECT COUNT(DISTINCT(botuser_name)) as user FROM enquiries"));
+$users=mysqli_fetch_array(mysqli_query($dbc,"SELECT COUNT(botuser_id) as user FROM botusers"));
 $questions=mysqli_fetch_array(mysqli_query($dbc,"SELECT SUM(botuser_questions) as questions FROM enquiries"));
 ?>
 <style >
