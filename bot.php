@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preset Enquiry Bot</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!--    <script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+    <script src="kit.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -46,10 +47,6 @@
 		window.close()
 		//document.getElementById("wrapper").style.display = "none";
 	})
-//	$(".open").on("click", function(){
-//		document.getElementById("wrapper").style.display = "block";
-//	})
-			
 	//check if there is an existing user
 	localStorage.removeItem('db')
 	if(!localStorage.getItem('_$cb_usr_keeper__')){
@@ -59,7 +56,7 @@
 
 	//saving the session for the current user
 	$.ajax({
-		url:'admin/cases/enquiries.php',
+		url:'admin/cases/enquiries.php?'+Date.now(),
 		method:'POST',
 		data:{user:user },
 		success:function(){
@@ -68,7 +65,7 @@
 
 	//fetch Q&A
 	$.ajax({
-		url:'admin/cases/load_db.php',
+		url:'admin/cases/load_db.php?'+Date.now(),
 		method:'POST',
 		success:function(){
 			//console.log('it is going on')
@@ -76,21 +73,15 @@
 	}).done(function(data){
 		let qa = (data);
 		localStorage.setItem('db', qa)
-		//if(localStorage.getItem('db'))console.log("ok")
-
-		//if(!localStorage.getItem('db'))console.log('hmm')
-
 		let res , 
 		db =JSON.parse(localStorage.getItem('db'));
-		console.log(db)
-
 			$("#send-btn").on("click", function(){
 			let value = $("#data").val();
 			var msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ value +'</p></div></div>';
 			$(".form").append(msg);
 			$("#data").val('');
 					$.ajax({
-					url:'admin/cases/process.php',
+					url:'admin/cases/process.php?',
 					method:'POST',
 					data:{user:user, },
 					success:function(){}
