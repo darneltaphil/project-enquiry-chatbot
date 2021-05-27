@@ -138,10 +138,6 @@ include "inc/header.php";
 					<button type="button" class=" btn-circle btn-sm btn-danger" data-dismiss="modal" >&times;</button>
 				</div>
 	-->
-				<div class="modal-body p-0">               
-
-						<?php include('cases/caseform.php'); ?>
-				</div>
 
 	<!--
 				<div class="modal-footer bg-dark">
@@ -152,100 +148,6 @@ include "inc/header.php";
 			</div>
 		</div>
 	</div><!-- modal -->
-	<div id="reference_modal" class="modal fade mb-5">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header bg-dark">
-					<h4 class="modal-title text-light">New Reference Physician /  Facility   </h4>
-					<button type="button" class=" btn-circle btn-sm btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#caseform_modal" data-backdrop="static" data-keyboard="false" >&times;</button>
-				</div>
-				<div class="modal-body reference_submit_feedback">
-						<?php include('reference/referenceform.php'); ?>
-				</div>
-
-				<div class="modal-footer bg-dark">
-	<!--                        <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>-->
-				</div>
-
-			</div>
-		</div>
-	</div><!-- modal -->
-	<div id="assign_modal" class="modal fade mb-5">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header bg-gradient-dark">
-					<h4 class="modal-title text-light">Assign Case </h4>
-					<button type="button" class=" btn-circle btn-sm btn-danger" data-dismiss="modal" >&times;</button>
-				</div>
-				<div class="modal-body ">
-
-						<?php include('cases/caseassignform.php'); ?>
-				</div>
-
-				<div class="modal-footer bg-gradient-dark">
-	<!--                        <button type="submit" class="btn btn-danger assign_form_submit " >Assign</button>-->
-				</div>
-
-			</div>
-		</div>
-	</div><!-- modal -->
-	<div id="assign_us_modal" class="modal fade mb-5">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header bg-gradient-warning">
-					<h4 class="modal-title text-light">Assign Ultrasound Case </h4>
-					<button type="button" class=" btn-circle btn-sm btn-danger" data-dismiss="modal" >&times;</button>
-				</div>
-				<div class="modal-body ">
-
-						<?php include('cases/caseassignform_us.php'); ?>
-				</div>
-
-				<div class="modal-footer bg-gradient-warning">
-	<!--                        <button type="submit" class="btn btn-danger assign_form_submit " >Assign</button>-->
-				</div>
-
-			</div>
-		</div>
-	</div><!-- modal -->
-	<div id="case_open_modal" class="modal left fade "  tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content case-open no-radius">
-
-					<div class="modal-header">
-						<h4 class="modal-title" id="myModalLabel">Left Sidebar</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-					</div>
-
-					<div class="modal-body" >
-						<div id="case_client_show"></div>
-
-						<div id="case_folder"></div>
-
-					</div>
-
-				</div><!-- modal-content -->
-			</div><!-- modal-dialog -->
-		</div><!-- modal -->
-	<div id="case_editor_modal" class="modal fade "  tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog large" role="document">
-				<div class="modal-content no-radius">
-
-					<div class="modal-header">
-						<h4 class="modal-title" id="myModalLabel"></h4>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-					</div>
-
-					<div class="modal-body" id="case_editor" >
-
-					</div>
-
-				</div><!-- modal-content -->
-			</div><!-- modal-dialog -->
-		</div><!-- modal -->
-
 	
 <script src="./vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="./vendor/datatables/dataTables.bootstrap4.min.js"></script>
