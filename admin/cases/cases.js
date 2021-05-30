@@ -35,28 +35,10 @@ $(document).ready(function(){
 	});
 	}
 
-	function load_caselist_closed(e){
-		if(e=='today'){
-			var formData = {
-			'date' 		: 'today',
-							};
-		}
-		if(e=='month'){
-			var formData = {
-			'date' 		: 'month',
-							};
-		}
-		if(e=='range'){
-			var formData = {
-			'date' 		:'range',
-			'from' 		: $("#from").val(),
-			'to' 		: $("#to").val()
-							};
-		}
+	function load_caselist_closed(){
 		$.ajax({
-		url:'cases/caselist_closed.php',
+		url:'cases/new_questions.php',
         method:'POST',
-		data:formData,
 		beforeSend:function(){
 					$('#caselist').html('<center><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
 
@@ -83,7 +65,7 @@ $(".caselist_title").text(' New questions');
 load_caselist_closed();
 });
 $('#from').datepicker({
-     format: "yyyy-mm-dd",
+    format: "yyyy-mm-dd",
     clearBtn: true,
     calendarWeeks: true,
     todayHighlight: true,

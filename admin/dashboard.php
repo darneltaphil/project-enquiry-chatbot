@@ -46,36 +46,14 @@ include "inc/header.php";
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Action:</div>
                                             <a class="dropdown-item" href="#">Refresh List</a>
-                                            <!--
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
--->
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
 
-                                    <!--
-<form>
-  <div class="form-group">
-    <label for="clientsearch">Client Name || Number </label>
-		 <div class="input-group mb-3">
-			<div class="input-group-prepend">
-				<span class="input-group-text" id="basic-addon1">Customer</span>
-				<span class="input-group-text" id="basic-addon1"><li class="fas fa-barcode fa-1x"></li> </span>
-			</div>
-	<input name="clientsearch" type="text" class="form-control" id="clientsearch" aria-describedby="ClientSearchHelp" placeholder="Enter name or number">
-			 <div class="input-group-append">
-				<span class="input-group-text" id="resetsearch"><li class="fas fa-times fa-1x"></li> </span>
-			</div>
 
-	  	</div>
-</div>
-</form>
--->
-                                    <div id="splash" class=""></div>
+                                    <div id="splash" class="">what is here</div>
 
 
                                 </div>
@@ -98,32 +76,11 @@ include "inc/header.php";
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Action:</div>
                                             <a class="dropdown-item" href="#">Refresh List</a>
-                                            <!--
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
--->
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-
-                                    <!--
-                  <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
-                  </div>
--->
-                                    <!--
-                  <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Direct
-                    </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-info"></i> Referral
-                    </span>
-                  </div>
--->
                                 </div>
 
                             </div>
