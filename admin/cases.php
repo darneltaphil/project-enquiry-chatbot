@@ -107,7 +107,7 @@ include "inc/header.php";
 					<button type="button" class=" btn-circle btn-sm btn-danger" data-dismiss="modal" >&times;</button>
 				</div>
 				<div class="modal-body">
-					   <form>
+					   <form id="question-form">
                   <div class="form-group">
                      <label for="keyword">Keyword</label>
                      <input name="keyword" type="email" class="form-control" id="keyword" aria-describedby="emailHelp" placeholder="Enter Keyword">

@@ -1,8 +1,7 @@
 <?php require_once("../db/access.php");
 $user="user".$_REQUEST['user'];
-$sql = "INSERT INTO `newquestions` (`newquestions_id`, `newquestions_user`, `newquestions_question`) VALUES (NULL, '".$user."', '".$question."'); ";
+$sql = "INSERT INTO `botquestions` (`botquestions_id`, `botquestions_name`, `botquestions_answer`,`botquestions_count`) VALUES (NULL, '".$keyword."', '".$question."', 0); ";
 $exe=mysqli_query($dbc,$sql);
-
 $resp=array();
 if($exe){
 	$resp['status']=true;
