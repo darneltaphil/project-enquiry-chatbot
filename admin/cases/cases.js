@@ -2,28 +2,10 @@ $(document).ready(function(){
 	"use strict" ;
 	
 	load_caselist_all();
-	function load_caselist_all(e){
-		if(e=='today'){
-			var formData = {
-			'date' 		: 'today',
-							};
-		}
-		if(e=='month'){
-			var formData = {
-			'date' 		: 'month',
-							};
-		}
-		if(e=='range'){
-			var formData = {
-			'date' 		:'range',
-			'from' 		: $("#from").val(),
-			'to' 		: $("#to").val()
-							};
-		}
+	function load_caselist_all(){
 		$.ajax({
 		url:'cases/caselist_all.php',
         method:'POST',
-		data:formData,
 		beforeSend:function(){
 		$('#caselist').html('<center><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
 		},
@@ -37,7 +19,7 @@ $(document).ready(function(){
 
 	function load_caselist_closed(){
 		$.ajax({
-		url:'cases/new_questions.php',
+		url:'cases/settings.php',
         method:'POST',
 		beforeSend:function(){
 					$('#caselist').html('<center><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
@@ -61,7 +43,7 @@ load_caselist_all();
 $("#closed_case").click(function(){
 $('#caselist_bg').removeClass();
 $('#caselist_bg').addClass('card-header py-3  bg-success text-white');
-$(".caselist_title").text(' New questions');
+$(".caselist_title").text(' Settings');
 load_caselist_closed();
 });
 $('#from').datepicker({
@@ -77,6 +59,11 @@ $('#to').datepicker({
     todayHighlight: true,
 });
 
+$(document).on('click', ".edit_question",function(){
+	//var id =$(this).attr('id');
+	$("#question_modal").modal('show');
+														   
+});
 $(document).on('click', ".delete_case",function(){
 	var id =$(this).attr('id');
 						$.confirm({

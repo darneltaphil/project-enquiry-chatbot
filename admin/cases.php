@@ -48,7 +48,7 @@ include "inc/header.php";
 							<span class="icon text-white-50">
 							<i class="fas fa-expand fa-1x"></i>
 							</span>
-							<span class="text  ">New questions </span>
+							<span class="text  ">Settings </span>
 						</a>
 					 </div>
 			</div>
@@ -94,28 +94,44 @@ include "inc/header.php";
     <i class="fas fa-angle-up"></i>
   </a>
 
-	<div id="caseform_modal" class="modal fade">
-		<div class="modal-dialog fullscreenModal">
+	<div id="question_modal" class="modal fade">
+		<div class="modal-dialog bg-white ">
+<!--
 			<div class="modal-content case-open" style="border-radius: 0px; scroll-y">
 					<div class="container-fluid border p-0 m-0" ><button type="button" class="close bg-danger  btn-sm p-1" data-dismiss="modal" >&times;</button>
 				</div>
-	<!--
-				<div class="modal-header bg-dark">
-					<h4 class="modal-title text-light">Create a Study case </h4>
+-->
+	
+				<div class="modal-header bg-info">
+					<h4 class="modal-title text-light">Add New Question </h4>
 					<button type="button" class=" btn-circle btn-sm btn-danger" data-dismiss="modal" >&times;</button>
 				</div>
-	-->
+				<div class="modal-body">
+					   <form>
+                  <div class="form-group">
+                     <label for="keyword">Keyword</label>
+                     <input name="keyword" type="email" class="form-control" id="keyword" aria-describedby="emailHelp" placeholder="Enter Keyword">
+                     <small id="emailHelp" class="form-text text-muted">use only one word here</small>
+                  </div>
+                  <div class="form-group">
+                     <label for="answer">Answer</label>
+                     <textarea  name="answer" class="form-control" id="answer" placeholder="Automated response"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+               </form>
 
-	<!--
-				<div class="modal-footer bg-dark">
+				</div>
+				
+
+	
+				<div class="modal-footer bg-info">
 	<button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
 				</div>
-	-->
+	
 
 			</div>
 		</div>
-	</div><!-- modal -->
-	
+	<!-- modal -->
 <script src="./vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="./vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <style>

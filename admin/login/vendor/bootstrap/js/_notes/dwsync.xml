@@ -5,4 +5,9 @@
 <file name="popper.js" server="ftp.sochibga.com" local="131510123560000000" remote="132580349400000000" Dst="0" />
 <file name="popper.min.js" server="ftp.sochibga.com" local="131478055800000000" remote="132580349400000000" Dst="0" />
 <file name="tooltip.js" server="ftp.sochibga.com" local="131510123400000000" remote="132580350000000000" Dst="0" />
+<file name="bootstrap.js" server="ftp.lotustechcloud.com" local="131468754820000000" remote="132668412600000000" Dst="0" />
+<file name="bootstrap.min.js" server="ftp.lotustechcloud.com" local="131468754820000000" remote="132668412600000000" Dst="0" />
+<file name="popper.js" server="ftp.lotustechcloud.com" local="131510123560000000" remote="132668412600000000" Dst="0" />
+<file name="popper.min.js" server="ftp.lotustechcloud.com" local="131478055800000000" remote="132668412600000000" Dst="0" />
+<file name="tooltip.js" server="ftp.lotustechcloud.com" local="131510123400000000" remote="132668412600000000" Dst="0" />
 </dwsync>

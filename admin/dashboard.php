@@ -53,7 +53,8 @@ include "inc/header.php";
                                 <div class="card-body">
 
 
-                                    <div id="splash" class="">what is here</div>
+                                    <div id="splash" class="">
+									 </div>
 
 
                                 </div>

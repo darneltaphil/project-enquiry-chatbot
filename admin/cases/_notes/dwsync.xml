@@ -8,12 +8,13 @@
 <file name="waves.png" server="ftp.sochibga.com" local="132331804660000000" remote="132659501400000000" Dst="0" />
 <file name="caselist_all.php" server="ftp.lotustechcloud.com" local="132665375904861541" remote="132665376000000000" Dst="0" />
 <file name="casedelete.php" server="ftp.lotustechcloud.com" local="132665208849196343" remote="132665984400000000" Dst="0" />
-<file name="caselist_closed.php" server="ftp.lotustechcloud.com" local="132665303755940601" remote="132665984400000000" Dst="0" />
-<file name="cases.js" server="ftp.lotustechcloud.com" local="132665860175963041" remote="132665984400000000" Dst="0" />
+<file name="cases.js" server="ftp.lotustechcloud.com" local="132668404304392023" remote="132668403600000000" Dst="0" />
 <file name="detectOS.php" server="ftp.lotustechcloud.com" local="132325932060000000" remote="132665984400000000" Dst="0" />
-<file name="enquiries.php" server="ftp.lotustechcloud.com" local="132665984479132033" remote="132665984400000000" Dst="0" />
+<file name="enquiries.php" server="ftp.lotustechcloud.com" local="132668374500156849" remote="132668403600000000" Dst="0" />
 <file name="index.php" server="ftp.lotustechcloud.com" local="132331804640000000" remote="132665984400000000" Dst="0" />
-<file name="load_db.php" server="ftp.lotustechcloud.com" local="132665984418048697" remote="132665984400000000" Dst="0" />
+<file name="load_db.php" server="ftp.lotustechcloud.com" local="132668326688299317" remote="132668403600000000" Dst="0" />
 <file name="process.php" server="ftp.lotustechcloud.com" local="132665985185331110" remote="132665985000000000" Dst="0" />
 <file name="waves.png" server="ftp.lotustechcloud.com" local="132331804660000000" remote="132665984400000000" Dst="0" />
+<file name="add_question.php" server="ftp.lotustechcloud.com" local="132668380198495073" remote="132668403600000000" Dst="0" />
+<file name="settings.php" server="ftp.lotustechcloud.com" local="132668402782086207" remote="132668447400000000" Dst="0" />
 </dwsync>
