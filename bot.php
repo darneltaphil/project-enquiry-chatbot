@@ -18,7 +18,7 @@
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="msg-header">
-                    <p>Hello there, how can I help you?</p>
+                    <p>Welcome to Preset Automated Equiry</p>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
 <script src="kit.js"></script>
 <script>
 $(document).ready(function(){ 
-	//The function of the clos button. onClick, close the chat window		
+	//The function of the close button, onClick, close the chat window		
 	document.getElementById("wrapper").style.display = "block"; 
 	$(".cancel").on("click", function(){
 		window.close()
@@ -60,20 +60,25 @@ $(document).ready(function(){
 		data:{user:user },
 		success:function(){
 		}
-	}).done(function(){});
+	}).done(function(){
+		var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>I am your virtual assistant, how may I help you?</p></div></div>';
+			$(".form").append(replay);
+			// when chat goes down the scroll bar automatically comes to the bottom
+			$(".form").scrollTop($(".form")[0].scrollHeight);
+
+	});
 
 	//fetch Q&A
 	$.ajax({
 		url:'admin/cases/load_db.php',
 		method:'POST',
-		success:function(){
-			
-		}
+		success:function(){}
 	}).done(function(data){
 		//saved the loaded Q&A locally
 		localStorage.setItem('db', data)
 		//load the data into db variable
 		let db =JSON.parse(localStorage.getItem('db'));
+		console.log(db);
 		//Set flag 
 		let res  
 
@@ -129,9 +134,8 @@ $(document).ready(function(){
 				var reply_array=[
 							 "Do you want to speak to a representative?", 
 							 "I am sorry, I don't understand your question", 
-							 "What do you want to do?", 
 							];
-			var index=Math.floor(Math.random() * 5)
+			var index=Math.floor(Math.random() * 2)
 
 			var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+reply_array[index]+'</p></div></div>';
 			$(".form").append(replay);

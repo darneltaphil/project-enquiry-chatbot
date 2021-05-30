@@ -4,6 +4,6 @@
 	$db=array();
 
 	while($res=mysqli_fetch_assoc($exe)){
-		$db[$res['q']]=$res['a'];
+		$db[trim($res['q'])]=trim($res['a']);
 	};
 	echo json_encode($db);
