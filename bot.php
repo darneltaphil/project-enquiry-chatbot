@@ -82,21 +82,6 @@ $(document).ready(function(){
 		//Set flag 
 		let res  
 
-//	 db={
-//		"Hi":'Hi, I am your virtual assistant',
-//		"Hello":'Hi, I am your virtual assistant',
-//		"good morning":"Yes, I am your virtual assistant. How may I help you?",
-//		"admission":"You buy a form of Gh 30 from the Administration, fill it out and add two passport size pictures, a copy of your BECE or SHS result or certificate and submit it to the school's administrator;",
-//		"fee":'DAY: (Sci, H. Econs, V, Arts) = GHc1,365 <br> (G. Arts, Business) = GHc1,315 <br><br> BOARDING: (Sci, H. Econs, V, Arts) = GHc2,920 <br> (G. Arts, Business) = GHc2,870 <br>',
-//		"location":'Firestone Madina, opposite mountain of fire church',
-//		"located":'Firestone Madina, opposite mountain of fire church',
-//		"visit":'First and second Saturdays of the month at 4:00 PM',
-//		"contact":'0246467089 / 0205800355',
-//		"number":'0246467089 / 0205800355',
-//		"mobile":'0246467089 / 0205800355',
-//		"call":'0246467089 / 0205800355',
-//	
-//}
 	$("#send-btn").on("click", function(){
 		let value = $("#data").val();
 		var msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ value +'</p></div></div>';
@@ -112,6 +97,7 @@ $(document).ready(function(){
 
 		$.each(db, function(i, val) {
 			if(!value.toLowerCase().includes(i)){
+				//raise the no answer flag
 				res=1;
 			} 
 		});
@@ -124,7 +110,8 @@ $(document).ready(function(){
 			$(".form").append(replay);
 			// when chat goes down the scroll bar automatically comes to the bottom
 			$(".form").scrollTop($(".form")[0].scrollHeight);
-		res=0;
+			//reset the no answer flag
+			res=0;
 	}
 
 		});
@@ -132,7 +119,7 @@ $(document).ready(function(){
 
 		if(res){
 				var reply_array=[
-							 "Do you want to speak to a representative?", 
+							 "Do you want to speak to a representative now? <span class='btn btn-success call_rep'>Yes</span>&nbsp;<span class='btn btn-danger no_call_rep'>No</span>", 
 							 "I am sorry, I don't understand your question", 
 							];
 			var index=Math.floor(Math.random() * 2)
@@ -141,7 +128,20 @@ $(document).ready(function(){
 			$(".form").append(replay);
 			// when chat goes down the scroll bar automatically comes to the bottom
 			$(".form").scrollTop($(".form")[0].scrollHeight);				
+			//reset the no answer flag
 			res =0
+			
+			//saving unanswered questions
+			$.ajax({
+				url:'admin/cases/saving.php',
+				method:'POST',
+				data:{q:value },
+				success:function(){
+				}
+				}).done(function(data){	});
+
+			
+			
 		}
 
 			});
