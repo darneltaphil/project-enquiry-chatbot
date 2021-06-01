@@ -12,7 +12,7 @@
                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                   aria-labelledby="dropdownMenuLink">
                   <div class="dropdown-header">Action:</div>
-                  <a class="dropdown-item" href="#">Refresh List</a>
+                  <span class="btn btn-primary add_new_question" dropdown-item">Add new keyword</a>
                </div>
             </div>
          </div>

@@ -78,7 +78,7 @@ $(document).ready(function(){
 		localStorage.setItem('db', data)
 		//load the data into db variable
 		let db =JSON.parse(localStorage.getItem('db'));
-		console.log(db);
+		//console.log(db);
 		//Set flag 
 		let res  
 
@@ -119,7 +119,7 @@ $(document).ready(function(){
 
 		if(res){
 				var reply_array=[
-							 "Do you want to speak to a representative now? <span class='btn btn-success call_rep'>Yes</span>&nbsp;<span class='btn btn-danger no_call_rep'>No</span>", 
+							 "I am sorry, I don't understand your question, do you want to speak to a representative now? <span class='btn btn-success call_rep'>Yes</span>&nbsp;<span class='btn btn-danger no_call_rep'>No</span>", 
 							 "I am sorry, I don't understand your question", 
 							];
 			var index=Math.floor(Math.random() * 2)
@@ -138,7 +138,9 @@ $(document).ready(function(){
 				data:{q:value },
 				success:function(){
 				}
-				}).done(function(data){	});
+				}).done(function(data){	
+			console.log(data)
+			});
 
 			
 			

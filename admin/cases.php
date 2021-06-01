@@ -96,16 +96,11 @@ include "inc/header.php";
 
 	<div id="question_modal" class="modal fade">
 		<div class="modal-dialog bg-white ">
-<!--
-			<div class="modal-content case-open" style="border-radius: 0px; scroll-y">
-					<div class="container-fluid border p-0 m-0" ><button type="button" class="close bg-danger  btn-sm p-1" data-dismiss="modal" >&times;</button>
-				</div>
--->
-	
 				<div class="modal-header bg-info">
-					<h4 class="modal-title text-light">Add New Question </h4>
+					<h4 class="modal-title text-light" id="form_title"> </h4>
 					<button type="button" class=" btn-circle btn-sm btn-danger" data-dismiss="modal" >&times;</button>
 				</div>
+			
 				<div class="modal-body">
 					   <form id="question-form">
                   <div class="form-group">
@@ -125,7 +120,7 @@ include "inc/header.php";
 
 	
 				<div class="modal-footer bg-info">
-	<button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
 				</div>
 	
 

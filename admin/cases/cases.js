@@ -60,10 +60,22 @@ $('#to').datepicker({
 });
 
 $(document).on('click', ".edit_question",function(){
-	//var id =$(this).attr('id');
+	$("#form-title").html('Edit Keyword');
+	$("#keyword").val();
+	$("#answer").val();
+
 	$("#question_modal").modal('show');
 														   
 });
+	
+$(document).on('click', ".add_new_question",function(){
+	$("#form-title").html('Add New Keyword');
+	$("#keyword").val();
+	$("#answer").val();
+	$("#question_modal").modal('show');
+														   
+});
+	
 $(document).on('click', ".delete_case",function(){
 	var id =$(this).attr('id');
 						$.confirm({
