@@ -94,7 +94,7 @@ include "inc/header.php";
     <i class="fas fa-angle-up"></i>
   </a>
 
-	<div id="question_modal" class="modal fade">
+	<div id="question_modal" class="modal ">
 		<div class="modal-dialog bg-white ">
 				<div class="modal-header bg-info">
 					<h4 class="modal-title text-light" id="form_title"> </h4>
