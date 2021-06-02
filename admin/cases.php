@@ -116,8 +116,6 @@ include "inc/header.php";
                </form>
 
 				</div>
-				
-
 	
 				<div class="modal-footer bg-info">
 					<button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
