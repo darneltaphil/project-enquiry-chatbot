@@ -19,6 +19,22 @@ load_questions();
 	});
 	}
 
+load_questions_unsolved();	
+	function load_questions_unsolved(){
+		$.ajax({
+		url:'appsettings/question_unsolved.php',
+        method:'POST',
+		beforeSend:function(){
+		$('#question-unsolved').html('<center><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
+
+		},
+		success:function(){}
+		
+		}).done(function(data){
+		$('#question-unsolved').html(data);
+	});
+	}
+
 	
 
 $("#general").click(function(){

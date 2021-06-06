@@ -80,7 +80,7 @@ include "inc/header.php";
 						<div class="container-fluid">
 						<div class="row">
 						<div class="col-xl-6 col-lg-6" id="question-list"></div>
-						<div class="col-xl-6 col-lg-6"></div>
+						<div class="col-xl-6 col-lg-6" id='question-unsolved'></div>
 						</div>
 						</div>
 						</div>
