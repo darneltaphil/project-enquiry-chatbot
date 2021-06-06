@@ -44,12 +44,12 @@ include "inc/header.php";
 							</span>
 							<span class="text  ">All enquiries </span>
 						</a>
-						<a href="#" id="closed_case" class="btn btn-light btn-icon-split  my-1 shadow"  > 
+						<!-- <a href="#" id="closed_case" class="btn btn-light btn-icon-split  my-1 shadow"  > 
 							<span class="icon text-white-50">
 							<i class="fas fa-expand fa-1x"></i>
 							</span>
 							<span class="text  ">Settings </span>
-						</a>
+						</a> -->
 					 </div>
 			</div>
 			
@@ -94,37 +94,6 @@ include "inc/header.php";
     <i class="fas fa-angle-up"></i>
   </a>
 
-	<div id="question_modal" class="modal ">
-		<div class="modal-dialog bg-white ">
-				<div class="modal-header bg-info">
-					<h4 class="modal-title text-light" id="form_title"> </h4>
-					<button type="button" class=" btn-circle btn-sm btn-danger" data-dismiss="modal" >&times;</button>
-				</div>
-			
-				<div class="modal-body">
-					   <form id="question-form">
-                  <div class="form-group">
-                     <label for="keyword">Keyword</label>
-                     <input name="keyword" type="email" class="form-control" id="keyword" aria-describedby="emailHelp" placeholder="Enter Keyword">
-                     <small id="emailHelp" class="form-text text-muted">use only one word here</small>
-                  </div>
-                  <div class="form-group">
-                     <label for="answer">Answer</label>
-                     <textarea  name="answer" class="form-control" id="answer" placeholder="Automated response"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
-               </form>
-
-				</div>
-	
-				<div class="modal-footer bg-info">
-					<button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
-				</div>
-	
-
-			</div>
-		</div>
-	<!-- modal -->
 <script src="./vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="./vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <style>

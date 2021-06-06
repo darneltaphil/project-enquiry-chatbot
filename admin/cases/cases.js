@@ -17,21 +17,6 @@ $(document).ready(function(){
 	});
 	}
 
-	function load_caselist_closed(){
-		$.ajax({
-		url:'cases/settings.php',
-        method:'POST',
-		beforeSend:function(){
-					$('#caselist').html('<center><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>');
-
-		},
-		success:function(){}
-		
-		}).done(function(data){
-		$('#caselist').html(data);
-	});
-	}
-
 
 // MENU BUTTONS COLOURS
 $("#individual_case").click(function(){
@@ -40,12 +25,12 @@ $('#caselist_bg').addClass('card-header py-3 bg-dark text-white');
 $(".caselist_title").text('All Equiries ');
 load_caselist_all();
 });
-$("#closed_case").click(function(){
-$('#caselist_bg').removeClass();
-$('#caselist_bg').addClass('card-header py-3  bg-success text-white');
-$(".caselist_title").text(' Settings');
-load_caselist_closed();
-});
+// $("#closed_case").click(function(){
+// $('#caselist_bg').removeClass();
+// $('#caselist_bg').addClass('card-header py-3  bg-success text-white');
+// $(".caselist_title").text(' Settings');
+// load_caselist_closed();
+// });
 $('#from').datepicker({
     format: "yyyy-mm-dd",
     clearBtn: true,

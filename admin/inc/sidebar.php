@@ -33,7 +33,7 @@ $settings = '
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 				  <div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="settings.php"><span class="fas fa-1x fa-cogs text-primary"></span> General Settings</a>
-						<a class="collapse-item" href="pricing.php"><span class="fas fa-1x fa-list-alt text-primary"></span> Check Update</a>
+						<a class="collapse-item" href="#pricing.php"><span class="fas fa-1x fa-list-alt text-primary"></span> Check Update</a>
 				  </div>
 				</div>
 </li>';
@@ -50,7 +50,7 @@ $menu_table       = array($dashboard,
 //						  $rl_moneystory, 
 //						  $rg_moneystory,
 //						  $settingtitle,
-//						  $settings
+						  $settings
 						 );
 	
 //$permission_query = "SELECT * FROM auth WHERE auth_user='".PASSPORT."'";
