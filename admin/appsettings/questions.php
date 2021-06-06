@@ -5,7 +5,7 @@
             class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Questions</h6>
 
-            <span class="btn btn-primary add_new_question" dropdown-item">Add new keyword</a>
+            <span class="btn btn-primary add_new_question" >Add new keyword</a>
 
          </div>
          <div class="card-body">

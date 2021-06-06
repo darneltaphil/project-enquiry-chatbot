@@ -25,12 +25,7 @@ $('#caselist_bg').addClass('card-header py-3 bg-dark text-white');
 $(".caselist_title").text('All Equiries ');
 load_caselist_all();
 });
-// $("#closed_case").click(function(){
-// $('#caselist_bg').removeClass();
-// $('#caselist_bg').addClass('card-header py-3  bg-success text-white');
-// $(".caselist_title").text(' Settings');
-// load_caselist_closed();
-// });
+
 $('#from').datepicker({
     format: "yyyy-mm-dd",
     clearBtn: true,

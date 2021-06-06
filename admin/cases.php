@@ -40,9 +40,9 @@ include "inc/header.php";
 
 						<a href="#" id="individual_case" class="btn btn-light btn-icon-split my-1 shadow" >
 							<span class="icon text-white-50">
-							<i class="fas fa-grip-horizontal fa-1x"></i>
+							<i class="fas fa-undo fa-1x"></i>
 							</span>
-							<span class="text  ">All enquiries </span>
+							<span class="text  ">Refresh table </span>
 						</a>
 						<!-- <a href="#" id="closed_case" class="btn btn-light btn-icon-split  my-1 shadow"  > 
 							<span class="icon text-white-50">
@@ -107,40 +107,7 @@ include "inc/header.php";
 	vertical-align: middle;
 	font-size: 0.9em;
 	}
-		#hierarchy
-	{
-		width: 480px;
-	}
-	.foldercontainer, .file, .noitems
-	{
-		display: block;
-		padding: 5px 5px 5px 20px;
-	}
-	.folder
-	{
-		color: #4e73df;
-	}
-	.file
-	{
-		color:#000;
-	}
-	.folder, .file
-	{
-		cursor: pointer;
-	}
-	.noitems
-	{
-		display: none;
-		pointer-events: none;
-	}
-	.folder:hover,.file:hover
-	{
-		background: #F4F4F4;
-	}
-	.folder:before, .file:before
-	{
-		padding-right: 10px;
-	}
+
 </style>
 
 </html>

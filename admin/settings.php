@@ -120,11 +120,11 @@ include "inc/header.php";
 <i class="fas fa-angle-up"></i>
 </a>
 
-<div id="question_form" class="modal fade">  
+<div id="question_form_modal" class="modal fade">  
       <div class="modal-dialog">  
            <div class="modal-content">  
                 <div class="modal-header bg-primary">  
-                    <h4 class="modal-title text-light" id="new-user">Add Questions</h4>  
+                    <h4 class="modal-title text-light" id="form-title"></h4>  
 					<button type="button" class="close" data-dismiss="modal">&times;</button>  
                 </div>  
 			   
@@ -132,7 +132,7 @@ include "inc/header.php";
                      <?php include("appsettings/question_form.php"); ?>  
                 </div>  
                 <div class="modal-footer bg-primary">  
-                     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>  
+                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  
                 </div>  
            </div>  
       </div>  
