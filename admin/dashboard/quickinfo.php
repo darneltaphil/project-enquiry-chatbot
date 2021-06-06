@@ -74,7 +74,7 @@ $questions=mysqli_fetch_array(mysqli_query($dbc,"SELECT SUM(botuser_questions) a
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-briefcase fa-3x text-gray-500"></i>
+                      <i class="fas fa-spell-check fa-3x text-gray-500"></i>
                     </div>
                   </div>
                 </div>

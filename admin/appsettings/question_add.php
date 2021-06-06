@@ -2,8 +2,8 @@
 //connect to the database
 require("../db/access.php");
 //get the form inputs
-$keyword=mysqli_real_escape_string(trim($_REQUEST['keyword']));
-$answer=mysqli_real_escape_string(trim($_REQUEST['answer'])) ;
+$keyword=(trim($_REQUEST['keyword']));
+$answer=(trim($_REQUEST['answer'])) ;
 $action=$_REQUEST['action'];
 //adding keyword scripts
 if($action=='add'){

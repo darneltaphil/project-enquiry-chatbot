@@ -18,7 +18,7 @@
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="msg-header">
-                    <p>Welcome to Preset Automated Equiry</p>
+                    <p>Welcome to Preset Automated Enquiry</p>
                 </div>
             </div>
         </div>

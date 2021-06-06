@@ -83,7 +83,7 @@ html,body{
     border-radius: 10px;
     padding: 8px 10px;
     font-size: 14px;
-    word-break: break-all;
+    word-break:   keep-all;
 }
 .form .user-inbox .msg-header p{
     color: #333;
