@@ -1,6 +1,7 @@
 <?php 
 $enquiries=mysqli_fetch_array(mysqli_query($dbc,"SELECT COUNT(botuser_id) as enquiries FROM enquiries"));
 $users=mysqli_fetch_array(mysqli_query($dbc,"SELECT COUNT(botuser_id) as user FROM botusers"));
+$keywords=mysqli_fetch_array(mysqli_query($dbc,"SELECT COUNT(botquestions_id) as  keywords FROM botquestions"));
 $questions=mysqli_fetch_array(mysqli_query($dbc,"SELECT SUM(botuser_questions) as questions FROM enquiries"));
 ?>
 <style >
@@ -54,21 +55,20 @@ $questions=mysqli_fetch_array(mysqli_query($dbc,"SELECT SUM(botuser_questions) a
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-<!--
+            <!-- Keyword (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-0">
                 <div class="card-body bg-dark-wave">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Questions</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Keywords</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $questions ?>%</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $keywords['keywords'] ?></div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $task ?>%" aria-valuenow="<?php echo $task ?>" aria-valuemin="0" aria-valuemax="100"></div>
+<!--                            <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $task ?>%" aria-valuenow="<?php echo $task ?>" aria-valuemin="0" aria-valuemax="100"></div>-->
                           </div>
                         </div>
                       </div>
@@ -80,7 +80,6 @@ $questions=mysqli_fetch_array(mysqli_query($dbc,"SELECT SUM(botuser_questions) a
                 </div>
               </div>
             </div>
--->
 
             <!-- Pending Requests Card Example -->
 
