@@ -23,8 +23,8 @@
 	echo "<tbody> ";
 	while($_row=mysqli_fetch_array($exe)){;
 										   
-							$delete="<span class='far fa-trash-alt fa-2x btn-circle btn-sm btn-outline-danger delete_unsolved' title='Delete question' id='".$_row['newquestions_id']."'></span> ";	
-							$use="<span class='far fa-angle-double-right fa-2x btn-circle btn-sm btn-outline-primary use_question' title='Use' id='".$_row['newquestions_id']."'></span> ";	
+							$delete="<span class='fas fa-trash-alt fa-2x btn-circle btn-sm btn-outline-danger delete_unsolved' title='Delete question' id='".$_row['newquestions_id']."'></span> ";	
+							$use="<span class='fas fa-angle-double-right fa-2x btn-circle btn-sm btn-outline-primary use_question' title='Use' id='".$_row['newquestions_id']."'></span> ";	
 
 		
 										   //CASES TABLE

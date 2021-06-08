@@ -13,7 +13,7 @@ $(document).ready(function(){
         $('*').bind('mousemove click mouseup mousedown keydown keypress keyup submit change mouseenter scroll resize dblclick', function () {
             clearTimeout(idleTimer);
            function logout() {
-				window.location='login/landingpage/logout.php';        
+				window.location='login/logout.php';        
 		   }
             idleState = false;
             idleTimer = setTimeout(function () { 
