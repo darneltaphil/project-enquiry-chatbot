@@ -1,5 +1,5 @@
 <?php require_once("../db/access.php");
-	$q="user".$_REQUEST['q'];
+	$q=$_REQUEST['q'];
 	$sql = "INSERT INTO `newquestions` (newquestions_id, newquestions_name) Values (Null, '".$q."')";
 	$exe=mysqli_query($dbc,$sql);
 	$resp=array();

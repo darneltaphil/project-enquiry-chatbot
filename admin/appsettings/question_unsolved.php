@@ -24,11 +24,11 @@
 	while($_row=mysqli_fetch_array($exe)){;
 										   
 							$delete="<span class='far fa-trash-alt fa-2x btn-circle btn-sm btn-outline-danger delete_unsolved' title='Delete question' id='".$_row['newquestions_id']."'></span> ";	
-							$use="<span class='far fa-edit fa-2x btn-circle btn-sm btn-outline-info use_question' title='Use' id='".$_row['newquestions_id']."'></span> ";	
+							$use="<span class='far fa-angle-double-right fa-2x btn-circle btn-sm btn-outline-primary use_question' title='Use' id='".$_row['newquestions_id']."'></span> ";	
 
 		
 										   //CASES TABLE
-	echo  "	<tr style='background:'>";
+	echo  "<tr style='background:'>";
 	echo "<td class='p-1'style='white-space: nowrap;'>".$_row['newquestions_name']." </td>";	
 									   
 										   //ACTION BUTTONS

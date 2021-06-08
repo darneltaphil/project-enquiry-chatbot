@@ -1,10 +1,10 @@
 <?php
 //connect to the database
-require("../db/access.php");
+  require("../db/access.php");
 //get the form inputs
-$keyword=(trim($_REQUEST['keyword']));
-$answer=(trim($_REQUEST['answer'])) ;
-$action=$_REQUEST['action'];
+  $keyword=(trim($_REQUEST['keyword']));
+  $answer=(trim($_REQUEST['answer'])) ;
+  $action=$_REQUEST['action'];
 //adding keyword scripts
 if($action=='add'){
   $sql="INSERT INTO botquestions (botquestions_id,botquestions_name,botquestions_answer,botquestions_count ) VALUES (NULL, '$keyword', '$answer', 0)";
