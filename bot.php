@@ -78,7 +78,6 @@ $(document).ready(function(){
 		localStorage.setItem('db', data)
 		//load the data into db variable
 		let db =JSON.parse(localStorage.getItem('db'));
-		//console.log(db);
 		//Set flag 
 		let res  
 

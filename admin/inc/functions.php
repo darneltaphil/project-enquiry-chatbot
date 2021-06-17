@@ -17,42 +17,7 @@ function get_age($var) {
 //	$m=date('Y')-;
 	return ($age);
 }
-function format_status($var){
-	if($var=='New'){
-		$style="<div title='New Case' class='btn btn-sm btn-primary' p-0'>New</div>";
-	}
-	if($var=='Pending'){
-		$style="<div title='Pending Case' class='btn btn-sm btn-outline-danger' p-0'>Pending</div>";
-	}
-	if($var=='Declined'){
-		$style="<div title='Declined Request' class='btn btn-sm btn-danger' p-0'>Declined</div>";
-	}
-	if($var=='Processing'){
-		$style="<div title='Processing' class='btn btn-sm btn-outline-warning' p-0'>Processing...</div>";
-	}
-	if($var=='On hold'){
-		$style="<div title='Request on hold' class='btn btn-sm btn-outline-warning' p-0'>On Hold...</div>";
-	}
-	if($var=='Completed'){
-		$style="<div title='Completed Case' class='btn btn-sm btn-outline-success' p-0'>Completed</div>";
-	}
-	if($var=='Closed' or $var=='Paid'){
-		$style="<div title='Closed Case' class='btn btn-sm btn-success' p-0'>Closed</div>";
-	}
-	if($var=='Approved'){
-		$style="<div title='Approved Request' class='btn btn-sm btn-success' p-0'>Approved</div>";
-	}
-	if($var=='Released'){
-		$style="<div title='Released Case' class='btn btn-sm btn-danger' p-0'>Released</div>";
-	}
-	if($var=='Accepted'){
-		$style="<div title='Accepted Case' class='btn btn-sm btn-outline-primary' p-0'>Accepted</div>";
-	}
-	if($var=='Protocol'){
-		$style="<div title='Protocol Case' class='fas fa-user-shield fa-2x btn-circle btn-sm btn-outline-danger' p-0'></div>";
-	}
-	return($style);
-}
+
 function clean_text($string)
 {
  $string = trim($string);

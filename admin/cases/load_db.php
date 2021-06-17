@@ -3,6 +3,7 @@
 	$exe=mysqli_query($dbc,$sql);
 	$db=array();
 
+//Changing mysql results into json format
 	while($res=mysqli_fetch_assoc($exe)){
 		$db[trim($res['q'])]=trim($res['a']);
 	};

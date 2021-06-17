@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Site Metas -->
-    <title>Preset School</title>
+    <title>Preset SHS</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -610,11 +610,14 @@ jQuery(function ($) {
 	var $this = $(this);
 	options = $.extend({}, options || {}, $this.data('countToOptions') || {});
 	$this.countTo(options);
-  }
+  };
 	
-$('.bot').onclick(function(){
-	window.open('google.com' , '_blank',"toolbar=no,addressbar=no,scrollbars=yes,resizable=no,top=10,left=500,width=800,height=750");
-} );
+
+	
+	
+	//$('.bot').onclick(function(){
+//	window.open('google.com' , '_blank',"toolbar=no,addressbar=no,scrollbars=yes,resizable=no,top=10,left=500,width=800,height=750");
+//} );
 	
 });
 	</script>
