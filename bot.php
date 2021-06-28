@@ -108,7 +108,7 @@ $(document).ready(function(){
 						//raise the no answer flag
 						res=1;
 					} 
-				});
+});
 
 				//check if the keyword exists
 				$.each(db, function(i, val) {
@@ -127,7 +127,7 @@ $(document).ready(function(){
 				if(res){
 
 					var reply_array=[
-									 "I am sorry, I don't understand your question, do you want to speak to a representative now? <span class='btn btn-success call_rep'>Yes</span>&nbsp;<span class='btn btn-danger no_call_rep'>No</span>", 
+									 "I am sorry, I don't understand your question, do you want to speak to a representative now? <br/><span class='btn btn-success call_rep'>Yes</span>&nbsp;<span class='btn btn-danger no_call_rep'>No</span>", 
 									 "I am sorry, I don't understand your question", 
 									];
 					var index=Math.floor(Math.random() * 2);
@@ -139,23 +139,80 @@ $(document).ready(function(){
 					//reset the no answer flag
 					res =0;
 					
-						$(".no_call_rep").click(()=>{
-						alert('i will not call');
-						});
-					
+					//if YES send the number of the representative
 						$(".call_rep").click(()=>{
 							var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p> You can use the following numbers '+db.call+' to call us</p></div></div>';
 							$(".form").append(replay);
-							// when chat goes down the scroll bar automatically comes to the bottom
 							$(".form").scrollTop($(".form")[0].scrollHeight);				
+						});
+
+					//if NO, ask if the answer should be sent later
+					$(".no_call_rep").click(()=>{
+							var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div>'+
+								'<div class="msg-header">'+
+								'<p> Would you like your answer to be sent to you later?<br/> '+
+								'<span class="btn btn-success send_answer">Yes</span>&nbsp;'+
+								'<span class="btn btn-danger no_send_answer">No</span></p>'+
+								'</div></div>';
+							$(".form").append(replay);
+							$(".form").scrollTop($(".form")[0].scrollHeight);
+						
+						//If the user says YES to send the answer later
+						$(".send_answer").click(()=>{
+							var replay = '<div class="bot-inbox inbox">'+
+											'<div class="icon"><i class="fas fa-user"></i></div>'+
+											'<div class="msg-header">'+
+											'<p> Ask your question?<br> '+
+											//'<textarea  id="user_question" name="user_question" cols=10 rows=3 placeholder="Ask your question"></textarea>'+
+											'<input type="text" id="user_number" name="user_number" class="user_number" size="10" placeholder="Enter your number" /><br/>'+
+											'<button id="send_question" class="btn btn-success send_question" >Ask </button>'+
+											'</p></div></div>';
+							$(".form").append(replay);
+							$(".form").scrollTop($(".form")[0].scrollHeight);
+						
+								//When click send number
+								$('.send_question').last().click(()=>{
+									var number=$(".user_number").last().val();
+									$(".user_number").last().attr('disabled', true);
+									console.log(number);
+									$.ajax({
+										url:"admin/cases/request_answer.php",
+										method:"POST",
+										data:{u:user, n:number },
+										
+									}).done(()=>{
+										var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div>'+
+											'<div class="msg-header">'+
+											'<p> Our representative will call you soon. Thank you'+
+											'</p></div></div>';
+										$(".form").append(replay);
+										$(".form").scrollTop($(".form")[0].scrollHeight);
+									});
+								});
+
+						});
+							
+						
+						//If the user says NO to send the answer later
+						$(".no_send_answer").click(()=>{
+							var replay = '<div class="bot-inbox inbox">'+
+											'<div class="icon"><i class="fas fa-user"></i></div>'+
+											'<div class="msg-header">'+
+											'<p>Alright, you can ask me any other questions'+
+											'</p></div></div>';
+							$(".form").append(replay);
+							$(".form").scrollTop($(".form")[0].scrollHeight);				
+							});
+						
+						});
 					
-						})
+					
 
 					//saving unanswered questions
 					$.ajax({
 						url:'admin/cases/saving.php',
 						method:'POST',
-						data:{q:value },
+						data:{q:value, u:user },
 						success:function(){
 						}
 						}).done(function(data){	
