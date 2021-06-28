@@ -44,109 +44,127 @@ $(document).ready(function(){
 		window.close()
 		//document.getElementById("wrapper").style.display = "none";
 	})
+	
 	//Delete any loaded Questions and answers
 	localStorage.removeItem('db')
+	
 	//check if there is an existing user
 	if(!localStorage.getItem('_$cb_usr_keeper__')){
+		
 		//if there is none, create one
 		localStorage.setItem('_$cb_usr_keeper__', $.now());
 	}
+	
 	let user = localStorage.getItem('_$cb_usr_keeper__');
+	
+	//function no_call_rep(){alert('i will not call');}
 
-	//saving the session for the current user
+	//no_call_rep()
+	//saving the session for the current user and send a first welcome message.
 	$.ajax({
 		url:'admin/cases/enquiries.php',
 		method:'POST',
 		data:{user:user },
 		success:function(){
 		}
-	}).done(function(){
+	})
+		.done(function(){
 		var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>I am your virtual assistant, how may I help you?</p></div></div>';
 			$(".form").append(replay);
 			// when chat goes down the scroll bar automatically comes to the bottom
 			$(".form").scrollTop($(".form")[0].scrollHeight);
-
 	});
 
-	//fetch Q&A
+	//fetch Q&A and get ready for interaction
 	$.ajax({
 		url:'admin/cases/load_db.php',
 		method:'POST',
 		success:function(){}
-	}).done(function(data){
+	})
+		.done(function(data){
+		
 		//saved the loaded Q&A locally
 		localStorage.setItem('db', data)
+		
 		//load the data into db variable
 		let db =JSON.parse(localStorage.getItem('db'));
+		
 		//Set flag 
-		let res  
+		let res  ;
 
-	$("#send-btn").on("click", function(){
-		let value = $("#data").val();
-		var msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ value +'</p></div></div>';
-		$(".form").append(msg);
-		$("#data").val('');
-				$.ajax({
-				url:'admin/cases/process.php',
-				method:'POST',
-				data:{user:user },
-				success:function(){
+			$("#send-btn").on("click", function(){
+				let value = $("#data").val();
+				var msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ value +'</p></div></div>';
+				$(".form").append(msg);
+				$("#data").val('');
+						$.ajax({
+						url:'admin/cases/process.php',
+						method:'POST',
+						data:{user:user },
+						success:function(){
+						}
+						})
+							.done(function(data){	});
+				//check if the keyword does not exist and raise flag
+				$.each(db, function(i, val) {
+					if(!value.toLowerCase().includes(i)){
+						//raise the no answer flag
+						res=1;
+					} 
+				});
+
+				//check if the keyword exists
+				$.each(db, function(i, val) {
+
+				if(value.toLowerCase().includes(i)){
+				 var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+val+'</p></div></div>';
+					$(".form").append(replay);
+					// when chat goes down the scroll bar automatically comes to the bottom
+					$(".form").scrollTop($(".form")[0].scrollHeight);
+					//reset the no answer flag
+					res=0;
+					}
+				});
+
+				//reply when the flag is raised. 
+				if(res){
+
+					var reply_array=[
+									 "I am sorry, I don't understand your question, do you want to speak to a representative now? <span class='btn btn-success call_rep' onClick=no_call_rep()>Yes</span>&nbsp;<span class='btn btn-danger no_call_rep'>No</span>", 
+									 "I am sorry, I don't understand your question", 
+									];
+					var index=Math.floor(Math.random() * 2);
+
+					var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+reply_array[index]+'</p></div></div>';
+					$(".form").append(replay);
+					// when chat goes down the scroll bar automatically comes to the bottom
+					$(".form").scrollTop($(".form")[0].scrollHeight);				
+					//reset the no answer flag
+					res =0;
+					function no_call_rep(){alert('i will not call');}
+									$(".no_call_rep").click(()=>{
+					alert('i will not call');
+				})
+
+					//saving unanswered questions
+					$.ajax({
+						url:'admin/cases/saving.php',
+						method:'POST',
+						data:{q:value },
+						success:function(){
+						}
+						}).done(function(data){	
+							//console.log(data)
+					});
+
+
+
 				}
-				}).done(function(data){	});
 
-		$.each(db, function(i, val) {
-			if(!value.toLowerCase().includes(i)){
-				//raise the no answer flag
-				res=1;
-			} 
-		});
+					});
+		
 
-
-		$.each(db, function(i, val) {
-
-		if(value.toLowerCase().includes(i)){
-		 var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+val+'</p></div></div>';
-			$(".form").append(replay);
-			// when chat goes down the scroll bar automatically comes to the bottom
-			$(".form").scrollTop($(".form")[0].scrollHeight);
-			//reset the no answer flag
-			res=0;
-	}
-
-		});
-
-
-		if(res){
-				var reply_array=[
-							 "I am sorry, I don't understand your question, do you want to speak to a representative now? <span class='btn btn-success call_rep'>Yes</span>&nbsp;<span class='btn btn-danger no_call_rep'>No</span>", 
-							 "I am sorry, I don't understand your question", 
-							];
-			var index=Math.floor(Math.random() * 2)
-
-			var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+reply_array[index]+'</p></div></div>';
-			$(".form").append(replay);
-			// when chat goes down the scroll bar automatically comes to the bottom
-			$(".form").scrollTop($(".form")[0].scrollHeight);				
-			//reset the no answer flag
-			res =0
-			
-			//saving unanswered questions
-			$.ajax({
-				url:'admin/cases/saving.php',
-				method:'POST',
-				data:{q:value },
-				success:function(){
-				}
-				}).done(function(data){	
-					console.log(data)
-			});
-
-			
-			
-		}
-
-			});
-	});
+	});//ajax end
 		
 });
 		
