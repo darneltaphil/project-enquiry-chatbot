@@ -57,9 +57,6 @@ $(document).ready(function(){
 	
 	let user = localStorage.getItem('_$cb_usr_keeper__');
 	
-	//function no_call_rep(){alert('i will not call');}
-
-	//no_call_rep()
 	//saving the session for the current user and send a first welcome message.
 	$.ajax({
 		url:'admin/cases/enquiries.php',
@@ -130,7 +127,7 @@ $(document).ready(function(){
 				if(res){
 
 					var reply_array=[
-									 "I am sorry, I don't understand your question, do you want to speak to a representative now? <span class='btn btn-success call_rep' onClick=no_call_rep()>Yes</span>&nbsp;<span class='btn btn-danger no_call_rep'>No</span>", 
+									 "I am sorry, I don't understand your question, do you want to speak to a representative now? <span class='btn btn-success call_rep'>Yes</span>&nbsp;<span class='btn btn-danger no_call_rep'>No</span>", 
 									 "I am sorry, I don't understand your question", 
 									];
 					var index=Math.floor(Math.random() * 2);
@@ -141,10 +138,18 @@ $(document).ready(function(){
 					$(".form").scrollTop($(".form")[0].scrollHeight);				
 					//reset the no answer flag
 					res =0;
-					function no_call_rep(){alert('i will not call');}
-									$(".no_call_rep").click(()=>{
-					alert('i will not call');
-				})
+					
+						$(".no_call_rep").click(()=>{
+						alert('i will not call');
+						});
+					
+						$(".call_rep").click(()=>{
+							var replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p> You can use the following numbers '+db.call+' to call us</p></div></div>';
+							$(".form").append(replay);
+							// when chat goes down the scroll bar automatically comes to the bottom
+							$(".form").scrollTop($(".form")[0].scrollHeight);				
+					
+						})
 
 					//saving unanswered questions
 					$.ajax({
