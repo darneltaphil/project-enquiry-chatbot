@@ -17,6 +17,7 @@
 	echo "<thead>
                      <tr class='bg-gray-100'>
 							<th style='white-space: nowrap;'>Questions</th>
+							<th>User's number</th>
 							<th>Actions</th>
 						</tr>
         </thead>";
@@ -30,6 +31,7 @@
 										   //CASES TABLE
 	echo  "<tr style='background:'>";
 	echo "<td class='p-1'style='white-space: nowrap;'>".$_row['newquestions_name']." </td>";	
+	echo "<td class='p-1'style='white-space: nowrap;'>".$_row['newquestions_user_number']." </td>";	
 									   
 										   //ACTION BUTTONS
 	echo "<td style='white-space: nowrap;'>";									   

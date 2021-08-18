@@ -128,7 +128,7 @@ $(document).ready(function(){
 
 					var reply_array=[
 									 "I am sorry, I don't understand your question, do you want to speak to a representative now? <br/><span class='btn btn-success call_rep'>Yes</span>&nbsp;<span class='btn btn-danger no_call_rep'>No</span>", 
-									 "I am sorry, I don't understand your question", 
+//									 "I am sorry, I don't understand your question", 
 									];
 					var index=Math.floor(Math.random() * 2);
 
@@ -174,7 +174,7 @@ $(document).ready(function(){
 								$('.send_question').last().click(()=>{
 									var number=$(".user_number").last().val();
 									$(".user_number").last().attr('disabled', true);
-									console.log(number);
+									//console.log(number);
 									$.ajax({
 										url:"admin/cases/request_answer.php",
 										method:"POST",
